@@ -1,0 +1,120 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: lockgate-autoapi-example
+  jackson: # 如果数据库定义的是datetime，mysql驱动映射成java为localDateTime，则此jackson格式化规则不生效
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  multi:
+    datasource:
+      default:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        hikari:
+          auto-commit: true
+          connection-test-query: SELECT 1
+          connection-timeout: 15000
+          idle-timeout: 180000
+          max-lifetime: 3600000
+          maximum-pool-size: 60
+          minimum-idle: 5
+          pool-name: DefaultHikariCP
+        username: nolink
+        password: nolink2718
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://centos-local.nolink.cc:3306/nolink?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      slave:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        hikari:
+          auto-commit: true
+          connection-test-query: SELECT 1
+          connection-timeout: 30000
+          idle-timeout: 180000
+          max-lifetime: 1800000
+          maximum-pool-size: 50
+          minimum-idle: 5
+          pool-name: SlaveHikariCP
+        username: nolink
+        password: nolink2718
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://192.168.214.252:3306/nolink?useUnicode=true&characterEncoding=utf-8&useSSL=false
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  cache:
+    disabled: true
+  packagesToScan: cc.nolink.example, cn.lockgate.autoapi
+  swagger-ui:
+    display-query-params-without-oauth2: true
+    displayRequestDuration: true
+    enabled: true
+    path: /swagger-ui.html
+    tagsSorter: alpha
+    use-root-path: true
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cc.nolink.demo.model
+
+autoapi:
+  config:
+    # resource -> 配置文件, db -> 数据库
+    configReaderType: "resource"
+    # api的包路径
+    # autoPackage: "com.nolink.demo.codeless.auto.api"
+    # 是否强制为post
+    forcePosting: false
+    # 是否开启自动接口，default true
+    autoApiEnable: true
+    # 开启sql日志打印级别，默认为info
+    sqlLogLevel: info
+    # 自定义基础类
+    baseDTOClass: cc.nolink.example.custom.dto.CustomBaseDTO
+    # 自定义查询基础类
+    # baseQueryDTOClass: cc.nolink.framework.dto.BaseRequestDTO
+    # 批处理批次大小
+    jdbc:
+      batchSize: 500
+      maxPageSize: 1000
+  api:
+    apis:
+      - domain: "retails"
+        services:
+          - service: "mall"
+            entities:
+              - entity: "order"
+                table: "mall_order"
+                tags:
+                  tagName: "订单头表API"
+                  tagDesc: "订单头表：mall_order增删改查接口"
+                actions:
+                  - all
+                orders: # map格式的排序规则配置
+                  - order_no: desc
+                  - create_time: asc
+                items:
+                  - tableName: "mall_order_item"
+                    foreignKey: "order_id"
+                    parentKey: "id" # 关联的主键默认是id
+              - entity: "order/item"
+                table: "mall_order_item"
+                actions:
+                  - add
+                  - adds
+                  - updateById
+                  - save
+                  - saves
+                  - deleteById
+          - service: "customer"
+            entities:
+              - entity: "customer"
+                table: "eg_customer"
+                actions:
+                  - all
+      - domain: "marketing"
