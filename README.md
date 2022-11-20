@@ -149,6 +149,53 @@ CREATE TABLE `mall_order_item` (
   </activeProfiles>
 ```
 
+完整范例
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  
+  <localRepository>D:\repository\lockgate</localRepository>
+  
+  <servers>
+    <server>
+      <id>lockgate-releases</id>
+      <username>63704d6128b61c88e75b4600</username>
+      <password>7669WMzm=HrM</password>
+    </server>
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>AliRepo-aliyun</id>
+      <mirrorOf>*,!lockgate-releases</mirrorOf>
+      <name>Mirror Name for the Alirepo.</name>
+      <url>https://maven.aliyun.com/repository/public</url>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>lockgate</id>
+      <repositories>
+        <repository>
+          <id>lockgate-releases</id>
+          <name>lockgate dependences</name>
+          <url>https://packages.aliyun.com/maven/repository/2139326-release-jtDdoi/</url>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <!-- 可以激活多个 -->
+    <activeProfile>lockgate</activeProfile>
+  </activeProfiles>
+</settings>
+```
+
 ###### (3) 创建springboot工程，添加如下依赖
 _当前仅支持mysql数据库，所以依赖mysql支持包即可_
 ```xml
