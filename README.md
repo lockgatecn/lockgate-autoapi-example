@@ -8,7 +8,7 @@
 
 ### 2. 架构说明
 #### 2.1 系统架构
-![系统架构图](img/architecture.png)
+![系统架构图](https://user-images.githubusercontent.com/117927019/202881127-ab0ff79c-227f-4097-bbed-6ead99c8c9f9.png)
 #### 2.2 技术栈
 |seq|选型|版本|
 |:---:|---|---|
@@ -24,12 +24,12 @@
 
 ### 3. 功能说明
 #### 3.1 接口全景展示
-![接口全景图](img/api_whole_scene.png "主子表13 + 3个接口列表全景")
+![接口全景图](https://user-images.githubusercontent.com/117927019/202881168-98725b52-8195-42c7-b050-dd0cbaae895e.png)
 #### 3.2 部分接口示例
 ##### 3.2.1 分页查询接口
-![分页查询接口示例图](img/api_query.png)
+![分页查询接口示例图](https://user-images.githubusercontent.com/117927019/202881178-2f6861ba-732f-451c-a3f1-9776a1a95dbc.png)
 ##### 3.2.2 单对象保存接口
-![单对象保存接口示例图](img/api_save.png)
+![api_save](https://user-images.githubusercontent.com/117927019/202881192-4036738b-b6e5-4705-809e-d6a40576eea8.png)
 #### 3.3 自定义场景支持
 |seq|场景|状态|
 |:---:|---|---|
@@ -238,7 +238,7 @@ autoapi:
 ```
 ###### (5) 启动工程，打开swagger-ui接口列表，即可提交前端进行调试
 例如范例工程打开：http://127.0.0.1:8080/swagger-ui.html
-![swagger效果示例](img/dev_example.png)
+![swagger效果示例](https://user-images.githubusercontent.com/117927019/202881197-f400598a-4f92-49af-ba3e-c082c2ffa404.png)
 -- ------
 **更多开发说明请参考产品说明文档
 https://lockgate.yuque.com/staff-zw2e7d/gzcxcl/glyg7l?# 《AutoApi（自动化接口）》**
