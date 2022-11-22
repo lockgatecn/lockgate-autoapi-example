@@ -287,8 +287,8 @@ autoapi:
 例如范例工程打开：http://127.0.0.1:8080/swagger-ui.html
 ![swagger效果示例](https://user-images.githubusercontent.com/117927019/202881197-f400598a-4f92-49af-ba3e-c082c2ffa404.png)
 -- ------
-**更多开发说明请参考产品说明文档
-https://juejin.cn/post/7168855555564388365/#heading-21
+**更多开发说明请参考产品说明文档  
+https://juejin.cn/post/7168855555564388365/#heading-21**
 -- ------
 ### 版权说明
 - 这是一个范例工程，产品本身并不提供源码，但是提供完整功能 
