@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @auth reset
+ * @auth lockgate
  * @description
  * @since 2022/9/20 19:17
  */

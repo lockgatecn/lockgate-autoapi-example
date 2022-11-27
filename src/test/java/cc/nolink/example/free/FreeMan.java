@@ -6,7 +6,7 @@ import cn.lockgate.autoapi.runtime.reflect.InvokeHelper;
 import cn.lockgate.framework.dto.UpdateByQueriesDTO;
 
 /**
- * @auth reset
+ * @auth lockgate
  * @description
  * @since 2022/9/26 10:23
  */

@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 厂商信息表 Mapper 接口
  * </p>
  *
- * @author lj
+ * @auth lockgate
  * @since 2022-03-30
  */
 @Mapper

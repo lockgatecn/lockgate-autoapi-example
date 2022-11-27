@@ -7,7 +7,7 @@ import cn.lockgate.autoapi.runtime.aspect.handler.action.IInsideTransactionOpera
 import org.springframework.stereotype.Component;
 
 /**
- * @auth reset
+ * @auth lockgate
  * @description
  * @since 2022/11/3 22:37
  */

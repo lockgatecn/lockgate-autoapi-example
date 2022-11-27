@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 /**
- * @auth reset
+ * @auth lockgate
  * @description
  * @since 2022/10/31 22:37
  */

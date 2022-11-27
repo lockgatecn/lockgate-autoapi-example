@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @auth reset
+ * @auth lockgate
  * @description 自定义基础DTO对象
  * @since 2022/10/24 21:55
  */
